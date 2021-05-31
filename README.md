@@ -1,6 +1,33 @@
 # intro-artificial-intelligence
 This is a group project.
 
+for all the maze except fire predict maze
+
+1 for good cell
+0 for obstacle p
+2 for fire
+0.5 for the potential way
+0.3 for the way we walked （strategy1, 2, 3 only）
+
+for fire predict maze
+
+0 for fire
+-1 for obstacle and the cell that fire can never reach
+from 1 to infinity is the the fastest steps that fire can reach this grid
+
+Steps For Usage
+1. run the python
+2. input dimension p (Separate by blank(" "))  (and q for strategy1, 2, 3)
+3. you will see the preview for the maze (graph)
+4. after you Turn off preview for the maze (graph), the code will run and give you a path(graph2)  (you will see fire graph  in strategy1, 2, 3.) if u can not see the graph2 code will print something to let you know what happened. e.g no way out
+5. after u turn off the final graph2. done.
+
+"no way out" or "just a bad maze. no way out"  means bad maze  no path out 
+"you reach the goal" means you reach the goal
+"u have been burned" means  you  have been burned and code will print where you were burned    e.g (3,6)
+"Juat a bad maze or Fire or/and obstacles are blocking you. No way out" means  bad maze  no path out   OR  The fire blocked your way, you have no way to go   (only for  strategy2, 3. )
+
+
 In order to predict the shortest number of steps from the fire to each grid, I first wrote a method predict_spread(maze). 
 In this method, all the fire point coordinates will be stored in the list fires; each coordinate fire[k] in fires will be regarded as a fire point, 
 and the prediction recursive method spread_once when there is only one fire point is called repeatedly.
